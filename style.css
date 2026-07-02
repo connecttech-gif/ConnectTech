@@ -133,17 +133,54 @@ body.menu-aberto #botoes-paginas {
   display: none;
 }
 
-/* ===== FAIXA DE BANNERS ===== */
-.faixa-banners {
-  background-color: var(--cor-banner);
-  color: var(--cor-texto-escuro);
-  text-shadow: var(--sombra-clara);
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 2em;
-  font-weight: bold;
+/* ===== FAIXA DE BANNERS (CARROSSEL) ===== */
+.carrossel-banners {
+  position: relative;
+  max-width: 480px;
+  margin: 20px auto;
+  overflow: hidden;
   border-radius: 16px;
-  margin: 20px;
+}
+
+.banners-lista {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.banner-item {
+  flex: 0 0 100%;
+  aspect-ratio: 1080 / 1440;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: var(--sombra-escura);
+  font-size: 1.6em;
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+}
+
+.banners-pontos {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.banners-pontos span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+.banners-pontos span.ativo {
+  background-color: #ffffff;
 }
 
 /* ===== VITRINES ===== */
