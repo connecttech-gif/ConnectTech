@@ -1,0 +1,290 @@
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+:root {
+  --cor-fundo-capa: #8a8a8a;
+  --cor-caixa-branca: #ffffff;
+  --cor-texto-escuro: #111111;
+  --cor-texto-claro: #ffffff;
+  --cor-banner: #4db6ac;
+  --sombra-escura: 0 1px 3px rgba(0,0,0,0.6);
+  --sombra-clara: 0 1px 3px rgba(255,255,255,0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+/* ===== BOTÃO DE MENU (3 barrinhas) ===== */
+#btn-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#btn-menu span {
+  width: 26px;
+  height: 3px;
+  background-color: #111111;
+  border-radius: 2px;
+}
+
+/* ===== ABA LATERAL DO MENU ===== */
+#menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  transition: left 0.3s ease;
+  z-index: 20;
+  padding-top: 80px;
+}
+
+#menu-lateral.aberto {
+  left: 0;
+}
+
+#lista-paginas {
+  list-style: none;
+}
+
+#lista-paginas li {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #111111;
+}
+
+/* ===== CAPA ===== */
+#capa {
+  background-color: var(--cor-fundo-capa);
+  padding: 40px 20px 30px 20px;
+}
+
+#imagem-capa {
+  display: block;
+  width: 100%;
+  max-width: 851px;
+  height: 315px;
+  margin: 0 auto;
+  background-color: var(--cor-caixa-branca);
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ===== CAIXA DE BOAS-VINDAS ===== */
+#boas-vindas {
+  padding: 30px 0 0 0;
+  text-align: center;
+}
+
+#boas-vindas p {
+  background-color: var(--cor-caixa-branca);
+  color: var(--cor-texto-escuro);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 16px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* ===== BOTÕES DE PÁGINA (dentro da capa) ===== */
+#botoes-paginas {
+  padding: 30px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#botoes-paginas button {
+  background-color: var(--cor-caixa-branca);
+  color: var(--cor-texto-escuro);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+/* Quando o menu abre, os botões da capa somem */
+body.menu-aberto #botoes-paginas {
+  display: none;
+}
+
+/* ===== FAIXA DE BANNERS ===== */
+.faixa-banners {
+  background-color: var(--cor-banner);
+  color: var(--cor-texto-escuro);
+  text-shadow: var(--sombra-clara);
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: 16px;
+  margin: 20px;
+}
+
+/* ===== VITRINES ===== */
+.vitrine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.vitrine-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  max-width: 700px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.vitrine-imagem {
+  flex: 1 1 260px;
+  aspect-ratio: 1080 / 1350;
+  background-color: #8a8a8a;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: var(--sombra-escura);
+  font-weight: bold;
+}
+
+.vitrine-texto {
+  flex: 1 1 260px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.vitrine-texto p {
+  color: var(--cor-texto-escuro);
+  font-size: 1em;
+}
+
+.vitrine-texto .botao-link {
+  align-self: flex-start;
+  background-color: var(--cor-banner);
+  color: var(--cor-texto-escuro);
+  text-shadow: var(--sombra-clara);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* Botão de remover item da vitrine (aparece no modo edição) */
+.vitrine-item .botao-remover {
+  display: none;
+}
+
+/* ===== NAVEGAÇÃO ENTRE PÁGINAS ===== */
+#navegacao-paginas {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#navegacao-paginas button {
+  background-color: #333333;
+  color: #ffffff;
+  text-shadow: var(--sombra-escura);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== RODAPÉ ===== */
+#rodape {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-shadow: var(--sombra-escura);
+  padding: 30px 20px;
+  text-align: center;
+}
+
+#links-politicas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+#links-politicas a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+#redes-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#redes-sociais a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* ===== BOTÃO FLUTUANTE DO WHATSAPP ===== */
+#botao-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  color: #ffffff;
+  text-shadow: var(--sombra-escura);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.7em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 15;
+}
