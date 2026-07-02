@@ -41,3 +41,35 @@ paginas.forEach(function (nomePagina) {
   item.textContent = nomePagina;
   listaPaginas.appendChild(item);
 });
+
+// ===== CARROSSEL DE BANNERS =====
+const listaBanners = document.querySelector('.banners-lista');
+const itensBanners = document.querySelectorAll('.banner-item');
+const containerPontos = document.getElementById('banners-pontos');
+let indiceAtual = 0;
+
+itensBanners.forEach(function (item, indice) {
+  const ponto = document.createElement('span');
+  if (indice === 0) ponto.classList.add('ativo');
+  ponto.addEventListener('click', function () {
+    indiceAtual = indice;
+    atualizarCarrossel();
+  });
+  containerPontos.appendChild(ponto);
+});
+
+const pontos = containerPontos.querySelectorAll('span');
+
+function atualizarCarrossel() {
+  listaBanners.style.transform = 'translateX(-' + (indiceAtual * 100) + '%)';
+  pontos.forEach(function (ponto, indice) {
+    ponto.classList.toggle('ativo', indice === indiceAtual);
+  });
+}
+
+function proximoBanner() {
+  indiceAtual = (indiceAtual + 1) % itensBanners.length;
+  atualizarCarrossel();
+}
+
+setInterval(proximoBanner, 4000);
