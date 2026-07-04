@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - ConnectTech</title>
+  <link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body>
+
+  <!-- Tela de Login -->
+  <div id="tela-login" class="tela-login">
+    <div class="caixa-login">
+      <div class="logo-login">ConnectTech</div>
+      <p class="subtitulo-login">Painel de Administração</p>
+
+      <form id="form-login">
+        <label for="email-login">E-mail</label>
+        <input type="email" id="email-login" placeholder="seu@email.com" required>
+
+        <label for="senha-login">Senha</label>
+        <input type="password" id="senha-login" placeholder="Sua senha" required>
+
+        <button type="submit" id="btn-login">Entrar</button>
+
+        <p id="mensagem-erro" class="mensagem-erro"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Painel Principal (aparece só depois do login) -->
+  <div id="painel-principal" class="painel-principal oculto">
+    <p>Login realizado com sucesso. O painel será construído na próxima etapa.</p>
+    <button id="btn-sair">Sair</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="dashboard-script.js"></script>
+</body>
+</html>
