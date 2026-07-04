@@ -1,0 +1,103 @@
+/* ===== CONFIGURAÇÕES GERAIS DO DASHBOARD ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* ===== TELA DE LOGIN ===== */
+.tela-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+  padding: 20px;
+}
+
+.caixa-login {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.logo-login {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.subtitulo-login {
+  color: #666666;
+  font-size: 0.9em;
+  margin-bottom: 30px;
+}
+
+#form-login {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#form-login label {
+  font-size: 0.85em;
+  color: #333333;
+  margin-bottom: 6px;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+#form-login input {
+  padding: 12px 14px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+#form-login input:focus {
+  outline: none;
+  border-color: #4db6ac;
+}
+
+#btn-login {
+  margin-top: 26px;
+  padding: 14px;
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn-login:hover {
+  background-color: #333333;
+}
+
+.mensagem-erro {
+  color: #d32f2f;
+  font-size: 0.85em;
+  margin-top: 14px;
+  text-align: center;
+  min-height: 18px;
+}
+
+/* ===== PAINEL PRINCIPAL ===== */
+.painel-principal {
+  padding: 30px;
+}
