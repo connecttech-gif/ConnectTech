@@ -212,3 +212,9 @@ body {
 .secao-dashboard p {
   color: #555555;
 }
+/* ===== TAMANHO DOS ÍCONES SVG DO MENU ===== */
+.icone-menu svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
