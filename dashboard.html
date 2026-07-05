@@ -30,8 +30,44 @@
 
   <!-- Painel Principal (aparece só depois do login) -->
   <div id="painel-principal" class="painel-principal oculto">
-    <p>Login realizado com sucesso. O painel será construído na próxima etapa.</p>
-    <button id="btn-sair">Sair</button>
+
+    <!-- Menu lateral do dashboard -->
+    <nav class="menu-dashboard">
+      <div class="logo-dashboard">ConnectTech</div>
+
+      <button class="botao-menu-dashboard ativo" data-secao="secao-paginas">Páginas</button>
+      <button class="botao-menu-dashboard" data-secao="secao-banners">Banners</button>
+      <button class="botao-menu-dashboard" data-secao="secao-vitrines">Vitrines</button>
+      <button class="botao-menu-dashboard" data-secao="secao-configuracoes">Configurações</button>
+
+      <button id="btn-sair" class="botao-sair-dashboard">Sair</button>
+    </nav>
+
+    <!-- Área de conteúdo, muda conforme o botão clicado -->
+    <main class="conteudo-dashboard">
+
+      <section id="secao-paginas" class="secao-dashboard">
+        <h2>Páginas</h2>
+        <p>Aqui você vai gerenciar as páginas do menu do site.</p>
+      </section>
+
+      <section id="secao-banners" class="secao-dashboard oculto">
+        <h2>Banners</h2>
+        <p>Aqui você vai gerenciar os banners giratórios da capa.</p>
+      </section>
+
+      <section id="secao-vitrines" class="secao-dashboard oculto">
+        <h2>Vitrines</h2>
+        <p>Aqui você vai gerenciar os produtos das vitrines.</p>
+      </section>
+
+      <section id="secao-configuracoes" class="secao-dashboard oculto">
+        <h2>Configurações</h2>
+        <p>Aqui você vai editar nome do site, redes sociais e políticas.</p>
+      </section>
+
+    </main>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
