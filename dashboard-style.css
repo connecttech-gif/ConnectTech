@@ -101,3 +101,84 @@ body {
 .painel-principal {
   padding: 30px;
 }
+
+/* ===== PAINEL PRINCIPAL COM MENU LATERAL ===== */
+.painel-principal {
+  display: flex;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* ===== MENU LATERAL ===== */
+.menu-dashboard {
+  width: 220px;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  flex-shrink: 0;
+}
+
+.logo-dashboard {
+  color: #ffffff;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 16px;
+}
+
+.botao-menu-dashboard {
+  background: none;
+  border: none;
+  color: #cccccc;
+  text-align: left;
+  padding: 14px 24px;
+  font-size: 0.95em;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.botao-menu-dashboard:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.botao-menu-dashboard.ativo {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-left: 3px solid #4db6ac;
+  font-weight: bold;
+}
+
+.botao-sair-dashboard {
+  margin-top: auto;
+  background: none;
+  border: none;
+  color: #ff8a80;
+  text-align: left;
+  padding: 14px 24px;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+
+.botao-sair-dashboard:hover {
+  background-color: #2a2a2a;
+}
+
+/* ===== ÁREA DE CONTEÚDO ===== */
+.conteudo-dashboard {
+  flex: 1;
+  padding: 30px;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
+
+.secao-dashboard h2 {
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.secao-dashboard p {
+  color: #555555;
+}
