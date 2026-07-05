@@ -31,23 +31,31 @@
   <!-- Painel Principal (aparece só depois do login) -->
   <div id="painel-principal" class="painel-principal oculto">
 
-    <!-- Botão para abrir/fechar o menu lateral -->
-    <button id="btn-menu-dashboard" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
     <!-- Menu lateral do dashboard -->
     <nav class="menu-dashboard" id="menu-dashboard">
-      <div class="logo-dashboard">ConnectTech</div>
+      <button id="btn-toggle-menu" class="botao-toggle-menu" aria-label="Abrir menu">☰</button>
 
-      <button class="botao-menu-dashboard ativo" data-secao="secao-paginas">Páginas</button>
-      <button class="botao-menu-dashboard" data-secao="secao-banners">Banners</button>
-      <button class="botao-menu-dashboard" data-secao="secao-vitrines">Vitrines</button>
-      <button class="botao-menu-dashboard" data-secao="secao-configuracoes">Configurações</button>
+      <button class="botao-menu-dashboard ativo" data-secao="secao-paginas">
+        <span class="icone-menu">📄</span>
+        <span class="texto-menu">Páginas</span>
+      </button>
+      <button class="botao-menu-dashboard" data-secao="secao-banners">
+        <span class="icone-menu">🖼️</span>
+        <span class="texto-menu">Banners</span>
+      </button>
+      <button class="botao-menu-dashboard" data-secao="secao-vitrines">
+        <span class="icone-menu">🛍️</span>
+        <span class="texto-menu">Vitrines</span>
+      </button>
+      <button class="botao-menu-dashboard" data-secao="secao-configuracoes">
+        <span class="icone-menu">⚙️</span>
+        <span class="texto-menu">Configurações</span>
+      </button>
 
-      <button id="btn-sair" class="botao-sair-dashboard">Sair</button>
+      <button id="btn-sair" class="botao-sair-dashboard">
+        <span class="icone-menu">🚪</span>
+        <span class="texto-menu">Sair</span>
+      </button>
     </nav>
 
     <!-- Área de conteúdo, muda conforme o botão clicado -->
