@@ -85,3 +85,11 @@ botoesMenu.forEach(function (botao) {
     }
   });
 });
+
+// ===== EXPANDIR/RECOLHER O MENU LATERAL DO DASHBOARD =====
+const menuDashboard = document.getElementById('menu-dashboard');
+const btnToggleMenu = document.getElementById('btn-toggle-menu');
+
+btnToggleMenu.addEventListener('click', function () {
+  menuDashboard.classList.toggle('aberto');
+});
