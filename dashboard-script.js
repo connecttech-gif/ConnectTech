@@ -56,3 +56,32 @@ btnSair.addEventListener('click', async function () {
 
 // ===== INICIA VERIFICANDO SE JÁ ESTÁ LOGADO =====
 verificarSessao();
+
+// ===== NAVEGAÇÃO ENTRE SEÇÕES DO DASHBOARD =====
+const botoesMenu = document.querySelectorAll('.botao-menu-dashboard');
+const secoesDashboard = document.querySelectorAll('.secao-dashboard');
+
+botoesMenu.forEach(function (botao) {
+  botao.addEventListener('click', function () {
+    const secaoAlvo = botao.getAttribute('data-secao');
+
+    // Remove a marcação "ativo" de todos os botões
+    botoesMenu.forEach(function (b) {
+      b.classList.remove('ativo');
+    });
+
+    // Marca o botão clicado como ativo
+    botao.classList.add('ativo');
+
+    // Esconde todas as seções
+    secoesDashboard.forEach(function (secao) {
+      secao.classList.add('oculto');
+    });
+
+    // Mostra apenas a seção correspondente ao botão clicado
+    const secaoParaMostrar = document.getElementById(secaoAlvo);
+    if (secaoParaMostrar) {
+      secaoParaMostrar.classList.remove('oculto');
+    }
+  });
+});
