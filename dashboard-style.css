@@ -102,41 +102,53 @@ body {
   padding: 30px;
 }
 
-/* ===== PAINEL PRINCIPAL COM MENU LATERAL ===== */
+/* ===== PAINEL PRINCIPAL ===== */
 .painel-principal {
-  display: flex;
   min-height: 100vh;
   padding: 0;
 }
 
-/* ===== MENU LATERAL ===== */
+/* ===== MENU LATERAL: FAIXA FINA QUE EXPANDE ===== */
 .menu-dashboard {
-  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 64px;
   background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
-  padding: 24px 0;
-  flex-shrink: 0;
+  z-index: 20;
+  overflow: hidden;
+  transition: width 0.25s ease;
 }
 
-.logo-dashboard {
+.menu-dashboard.aberto {
+  width: 220px;
+}
+
+.botao-toggle-menu {
+  background: none;
+  border: none;
   color: #ffffff;
-  font-size: 1.3em;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 0 16px;
+  font-size: 1.4em;
+  padding: 18px 20px;
+  cursor: pointer;
+  text-align: left;
 }
 
 .botao-menu-dashboard {
   background: none;
   border: none;
   color: #cccccc;
-  text-align: left;
-  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
   font-size: 0.95em;
   cursor: pointer;
   border-left: 3px solid transparent;
+  white-space: nowrap;
 }
 
 .botao-menu-dashboard:hover {
@@ -151,15 +163,32 @@ body {
   font-weight: bold;
 }
 
+.icone-menu {
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+.texto-menu {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.menu-dashboard.aberto .texto-menu {
+  opacity: 1;
+}
+
 .botao-sair-dashboard {
   margin-top: auto;
   background: none;
   border: none;
   color: #ff8a80;
-  text-align: left;
-  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
   font-size: 0.95em;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .botao-sair-dashboard:hover {
@@ -168,10 +197,11 @@ body {
 
 /* ===== ÁREA DE CONTEÚDO ===== */
 .conteudo-dashboard {
-  flex: 1;
+  margin-left: 64px;
   padding: 30px;
   background-color: #f4f4f4;
-  overflow-y: auto;
+  min-height: 100vh;
+  transition: margin-left 0.25s ease;
 }
 
 .secao-dashboard h2 {
