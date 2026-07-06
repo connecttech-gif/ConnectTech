@@ -63,7 +63,31 @@
 
       <section id="secao-paginas" class="secao-dashboard">
         <h2>Páginas</h2>
-        <p>Aqui você vai gerenciar as páginas do menu do site.</p>
+
+        <div id="lista-paginas-dashboard" class="lista-itens"></div>
+
+        <button id="btn-nova-pagina" class="botao-primario">+ Nova página</button>
+
+        <div id="editor-pagina" class="editor-pagina oculto">
+          <h3 id="titulo-editor-pagina">Nova página</h3>
+
+          <label>Nome da página (aparece no menu do site)</label>
+          <input type="text" id="input-nome-pagina" placeholder="Ex: Sobre Nós">
+
+          <label class="label-blocos">Adicionar bloco de texto:</label>
+          <div class="blocos-toolbar">
+            <button type="button" class="botao-secundario" data-tipo-bloco="cabecalho">+ Cabeçalho</button>
+            <button type="button" class="botao-secundario" data-tipo-bloco="subcabecalho">+ Subcabeçalho</button>
+            <button type="button" class="botao-secundario" data-tipo-bloco="texto">+ Texto</button>
+          </div>
+
+          <div id="lista-blocos"></div>
+
+          <div class="editor-acoes">
+            <button id="btn-salvar-pagina" class="botao-primario">Salvar página</button>
+            <button id="btn-cancelar-pagina" class="botao-secundario">Cancelar</button>
+          </div>
+        </div>
       </section>
 
       <section id="secao-banners" class="secao-dashboard oculto">
